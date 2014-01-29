@@ -60,7 +60,8 @@ class AppKernel extends Kernel
             new Tiger\TigerJsBundle\TigerJsBundle(),
             new Nmotion\NmotionBundle\NmotionNmotionBundle(),
             new Nmotion\ApiBundle\NmotionApiBundle(),
-            new Nmotion\BackofficeBundle\NmotionBackofficeBundle()
+            new Nmotion\BackofficeBundle\NmotionBackofficeBundle(),
+            new Nmotion\LandingPageBundle\NmotionLandingPageBundle()
         );
 
         if ($this->isDevEnvironment()) {
