@@ -27,6 +27,11 @@ class RestaurantCheckin
      * @var string
      */
     private $tableNumber;
+    
+    /**
+     * @var integer
+     */
+    private $takeawayPickupTime = 0;
 
     /**
      * @var integer
@@ -238,6 +243,31 @@ class RestaurantCheckin
         return $this->user;
     }
 
+
+    /**
+     * Set takeaway pickup time
+     *
+     * @param integer $takeawayPickupTime
+     * @return RestaurantCheckin
+     */
+    public function setTakeawayPickupTime($takeawayPickupTime)
+    {
+    	$this->takeawayPickupTime = $takeawayPickupTime;
+    
+    	return $this;
+    }
+    
+    /**
+     * Get takeaway pickup time
+     *
+     * @return integer
+     */
+    public function getTakeawayPickupTime()
+    {
+    	return $this->takeawayPickupTime;
+    }
+    
+    
     /**
      * Is checkin expired
      *

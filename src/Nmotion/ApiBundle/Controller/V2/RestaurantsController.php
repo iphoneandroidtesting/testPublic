@@ -37,6 +37,7 @@ class RestaurantsController extends V1\RestaurantsController
         $serviceTypeId       = $this->getRequest()->get('serviceType');
         $tableNumber         = $this->getRequest()->get('table');
         $fbRestaurantCheckin = $this->getRequest()->get('fbRestaurantCheckin');
+        $takeawayPickupTime  = $this->getRequest()->get('takeawayPickupTime');
 
         if (!$serviceTypeId) {
             throw new PreconditionFailedException('Parameter "serviceType" is required.');
@@ -62,6 +63,10 @@ class RestaurantsController extends V1\RestaurantsController
                     throw new PreconditionFailedException(
                         'Restaurant "' . $restaurant->getName() . '" does not support service type '
                         . $serviceType->getName()
+                    );
+                } else if(!$takeawayPickupTime) {
+                    throw new PreconditionFailedException(
+                    	'Parameter "takeawayPickupTime" is required for requests of type TAKEAWAY.'
                     );
                 }
                 break;
@@ -147,6 +152,7 @@ class RestaurantsController extends V1\RestaurantsController
         $checkin = new RestaurantCheckin($restaurant, $user);
         $checkin->setServiceType($serviceType);
         $checkin->setTableNumber($tableNumber);
+        $checkin->setTakeawayPickupTime($takeawayPickupTime);
         $this->getDoctrine()->getManager()->persist($checkin);
         $this->getDoctrine()->getManager()->flush();
 

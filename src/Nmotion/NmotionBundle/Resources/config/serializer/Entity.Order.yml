@@ -71,7 +71,7 @@ Nmotion\NmotionBundle\Entity\Order:
         takeawayPickupTime:
             type: double
             serialized_name: takeawayPickupTime
-            groups: [backoffice]
+            groups: [api, api.orders.entity, api.list, backoffice]
         createdAt:
             serialized_name: createdAt
             groups: [api, api.orders.entity, api.list, backoffice]

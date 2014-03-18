@@ -25,6 +25,13 @@ Nmotion\NmotionBundle\Entity\RestaurantCheckin:
             nullable: false
             column: checked_out
             gedmo: [ versioned ]
+        takeawayPickupTime:
+            type: integer
+            scale: 5
+            unsigned: true
+            nullable: false
+            column: takeaway_pickup_time
+            gedmo: [ versioned ]
         createdAt:
             type: integer
             unsigned: true
