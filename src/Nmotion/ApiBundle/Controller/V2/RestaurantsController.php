@@ -90,6 +90,11 @@ class RestaurantsController extends V1\RestaurantsController
         if (!$restaurant->isOpen()) {
             throw new PreconditionFailedException('Restaurant is closed.');
         }
+        
+        // Fill takeawayPickupTime with non-null value
+        if(!$takeawayPickupTime) {
+        	$takeawayPickupTime = 0;
+        }
 
         if ($serviceType->getId() != RestaurantServiceType::TAKEAWAY) {
             $checkinRepository = $this->getRepository('RestaurantCheckin');
