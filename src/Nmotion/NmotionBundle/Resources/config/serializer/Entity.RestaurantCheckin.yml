@@ -21,6 +21,11 @@ Nmotion\NmotionBundle\Entity\RestaurantCheckin:
             type: double
             serialized_name: takeawayPickupTime
             groups: [api, backoffice]
+        contactPhoneNumber:
+            expose: true
+            type: string
+            serialized_name: contactPhoneNumber
+            groups: [api, backoffice]
         checkedOut:
             expose: true
             type: boolean

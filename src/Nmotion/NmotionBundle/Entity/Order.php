@@ -104,6 +104,11 @@ class Order
      * @var integer
      */
     private $takeawayPickupTime = 0;
+    
+    /**
+     * @var string
+     */
+    private $contactPhoneNumber;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -653,6 +658,31 @@ class Order
     {
         return $this->takeawayPickupTime;
     }
+    
+    
+    /**
+     * Set contact phone number
+     *
+     * @param string $contactPhoneNumber
+     * @return RestaurantCheckin
+     */
+    public function setContactPhoneNumber($contactPhoneNumber)
+    {
+    	$this->contactPhoneNumber = $contactPhoneNumber;
+    	 
+    	return $this;
+    }
+    
+    /**
+     * Get contact phone number
+     *
+     * @return string
+     */
+    public function getContactPhoneNumber()
+    {
+    	return $this->contactPhoneNumber;
+    }
+    
 
     public function getOrderTotalInCents()
     {

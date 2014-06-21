@@ -130,6 +130,7 @@ class OrdersController extends V1\OrdersController
         $order->setTableNumber($checkin->getTableNumber());
         $order->setOrderStatus($orderStatus);
         $order->setTakeawayPickupTime($checkin->getTakeawayPickupTime());
+        $order->setContactPhoneNumber($checkin->getContactPhoneNumber());
 
         return $this->processForm($order);
     }

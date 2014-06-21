@@ -38,6 +38,7 @@ class RestaurantsController extends V1\RestaurantsController
         $tableNumber         = $this->getRequest()->get('table');
         $fbRestaurantCheckin = $this->getRequest()->get('fbRestaurantCheckin');
         $takeawayPickupTime  = $this->getRequest()->get('takeawayPickupTime');
+        $contactPhoneNumber  = $this->getRequest()->get('contactPhoneNumber');
 
         if (!$serviceTypeId) {
             throw new PreconditionFailedException('Parameter "serviceType" is required.');
@@ -68,6 +69,10 @@ class RestaurantsController extends V1\RestaurantsController
                     throw new PreconditionFailedException(
                     	'Parameter "takeawayPickupTime" is required for requests of type TAKEAWAY.'
                     );
+                } else if(!$contactPhoneNumber) {
+                	throw new PreconditionFailedException(
+                    	'Parameter "contactPhoneNumber" is required for requests of type TAKEAWAY.'
+                    );
                 }
                 break;
             case RestaurantServiceType::ROOM_SERVICE:
@@ -94,6 +99,10 @@ class RestaurantsController extends V1\RestaurantsController
         // Fill takeawayPickupTime with non-null value
         if(!$takeawayPickupTime) {
         	$takeawayPickupTime = 0;
+        }
+        // Fill contactPhoneNumber with non-null value
+        if(!$contactPhoneNumber) {
+        	$contactPhoneNumber = "";
         }
 
         if ($serviceType->getId() != RestaurantServiceType::TAKEAWAY) {
@@ -158,6 +167,7 @@ class RestaurantsController extends V1\RestaurantsController
         $checkin->setServiceType($serviceType);
         $checkin->setTableNumber($tableNumber);
         $checkin->setTakeawayPickupTime($takeawayPickupTime);
+        $checkin->setContactPhoneNumber($contactPhoneNumber);
         $this->getDoctrine()->getManager()->persist($checkin);
         $this->getDoctrine()->getManager()->flush();
 

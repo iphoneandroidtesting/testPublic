@@ -32,6 +32,12 @@ Nmotion\NmotionBundle\Entity\RestaurantCheckin:
             nullable: false
             column: takeaway_pickup_time
             gedmo: [ versioned ]
+        contactPhoneNumber:
+            type: string
+            length: 255
+            nullable: false
+            column: contact_phone_number
+            gedmo: [ versioned ]
         createdAt:
             type: integer
             unsigned: true
