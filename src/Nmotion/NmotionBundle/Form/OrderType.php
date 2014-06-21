@@ -13,7 +13,7 @@ class OrderType extends AbstractType
         $builder
             ->add('id', 'integer', ['disabled' => true])
             ->add('takeawayPickupTime', 'integer', ['disabled' => true])
-            ->add('contactPhoneNumber', 'string', ['disabled' => true])
+            ->add('contactPhoneNumber', 'text', ['disabled' => true])
             ->add(
                 'orderMeals',
                 new Type\IdBasedCollectionType(),
