@@ -3,7 +3,7 @@ Order # {{ order.id }}
 Room # {{ order.tableNumber }} at {{ "now"|date("H:i") }} on {{ "now"|date("M d") }}
 {% elseif order.serviceType and order.serviceType.id == 2 %}
 Take away Pickup time # at {{ order.takeawayPickupTime|date("H:i") }} on {{ order.takeawayPickupTime|date("M d") }} {{"\n" }}
-Contact Phone Number: {{ order.contactPhoneNumber }}
+Contact Phone Number: {{ order.contactPhoneNumber | raw }}
 {% else %}
 Table # {{ order.tableNumber }} at {{ "now"|date("H:i") }} on {{ "now"|date("M d") }}
 {% endif %}
