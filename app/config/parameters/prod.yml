@@ -2,8 +2,8 @@ parameters:
     database_driver:   pdo_mysql
     database_host:     localhost
     database_port:     ~
-    database_name:     nmotion
-    database_user:     nmotion_user
+    database_name:     nmotion_dev
+    database_user:     nmotion_dev
     database_password: 1111
 
     mailer_transport:  mail
