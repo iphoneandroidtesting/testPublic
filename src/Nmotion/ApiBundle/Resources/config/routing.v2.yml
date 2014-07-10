@@ -43,6 +43,11 @@ v2_config:
     type: rest
     resource: Nmotion\ApiBundle\Controller\V2\ConfigController
     name_prefix: api_v2_
+    
+v2_payment:
+    type: rest
+    resource: Nmotion\ApiBundle\Controller\v2\PaymentController
+    name_prefix: api_v2_
 
 api_v2_not_found:
     path: /{path}
