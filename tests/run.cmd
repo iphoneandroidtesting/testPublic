@@ -1,1 +1,0 @@
-php "../vendor/Codeception/Codeception/codecept" run --colors --debug --no-exit --steps api && pause

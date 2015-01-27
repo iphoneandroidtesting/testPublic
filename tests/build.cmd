@@ -1,1 +1,0 @@
-php "../vendor/Codeception/Codeception/codecept" build && pause
